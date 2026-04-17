@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Loja de Perfumes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f5f5f5;
+    }
+
+    header {
+      background: #111;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .produto {
+      background: white;
+      border-radius: 10px;
+      width: 200px;
+      margin: 15px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .produto img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    button {
+      background: #000;
+      color: white;
+      border: none;
+      padding: 10px;
+      margin-top: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background: #444;
+    }
+
+    #carrinho {
+      position: fixed;
+      right: 0;
+      top: 0;
+      width: 250px;
+      height: 100%;
+      background: #222;
+      color: white;
+      padding: 15px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>🌸 Loja de Perfumes</h1>
+</header>
+
+<div class="container">
+
+  <div class="produto">
+    <img src="https://via.placeholder.com/200" alt="Perfume 1">
+    <h3>Perfume Elegance</h3>
+    <p>R$ 199,90</p>
+    <button onclick="adicionar('Perfume Elegance')">Comprar</button>
+  </div>
+
+  <div class="produto">
+    <img src="https://via.placeholder.com/200" alt="Perfume 2">
+    <h3>Perfume Night</h3>
+    <p>R$ 249,90</p>
+    <button onclick="adicionar('Perfume Night')">Comprar</button>
+  </div>
+
+  <div class="produto">
+    <img src="https://via.placeholder.com/200" alt="Perfume 3">
+    <h3>Perfume Fresh</h3>
+    <p>R$ 179,90</p>
+    <button onclick="adicionar('Perfume Fresh')">Comprar</button>
+  </div>
+
+</div>
+
+<div id="carrinho">
+  <h2>Carrinho 🛒</h2>
+  <ul id="lista"></ul>
+</div>
+
+<script>
+  function adicionar(produto) {
+    let lista = document.getElementById("lista");
+    let item = document.createElement("li");
+    item.textContent = produto;
+    lista.appendChild(item);
+  }
+</script>
+
+</body>
+</html>
